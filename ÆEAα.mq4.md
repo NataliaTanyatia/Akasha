@@ -1174,4 +1174,3 @@ void OnTick()
     "\n    _",iW,":",W,"|",iw,":",w,"=",l[W-(y+1)],"|",l[w-(y+1)]);
     }//U+1F48E-💎 Natalia Tanyatia
 ```
-    }
