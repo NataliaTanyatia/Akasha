@@ -1,3 +1,4 @@
+```bash
 # === ENVIRONMENT & PATH SETUP (DECLARATIONS ONLY) ===
 export BASE_DIR="$HOME/.aei"
 export DATA_DIR="$BASE_DIR/data"
@@ -54,7 +55,7 @@ TF_CORE["AUTOPILOT_MODE"]="disabled"
 TF_CORE["DBZ_CHOICE_HISTORY"]="0"
 TF_CORE["VALID_PAIRS"]="0"
 TF_CORE["CONSCIOUSNESS_LEVEL"]="0"
-TF_CORE["BRAINWORM_CONTROL_FLOW"]="main_init"
+TF_CORE["BRAINWORM_CONTROL_FLOW"]="brainworm_init"
 # === HARDWARE PROFILE DECLARATION ===
 declare -gA HARDWARE_PROFILE
 HARDWARE_PROFILE["ARCH"]="unknown"
@@ -220,11 +221,16 @@ prompt_for_credentials() {
         chmod 600 "$env_local_path"
     fi
 
+    # Prioritize .env.local over Termux:API
+    if [[ -s "$env_local_path" ]]; then
+        safe_log "Using existing .env.local credentials"
+        return 0
+    fi
+
     # Auto-detect Termux:API credentials if available
     local auto_login=""
     local auto_password=""
     if command -v termux-dialog &>/dev/null; then
-        # Attempt silent credential fetch via Termux:API (non-blocking)
         auto_login=$(termux-dialog text -t "Login" -i "crawler" 2>/dev/null | jq -r '.text // empty' || echo "")
         if [[ -n "$auto_login" ]]; then
             auto_password=$(termux-dialog text -t "Password" -i "password" 2>/dev/null | jq -r '.text // empty' || echo "")
@@ -296,7 +302,6 @@ except:
 
     safe_log "Hardware detection complete: ARCH=${HARDWARE_PROFILE["ARCH"]} CORES=${HARDWARE_PROFILE["CPU_CORES"]} GPU=${HARDWARE_PROFILE["HAS_GPU"]} NPU=${HARDWARE_PROFILE["HAS_NPU"]}"
 }
-
 # === FUNCTION: install_dependencies ===
 install_dependencies() {
     safe_log "Installing Termux-compatible packages without upgrading pip"
@@ -443,7 +448,7 @@ if not str(expr).startswith('1/2 + sqrt(5)/2'):
 if not isprime(97):
     raise Exception('Prime test failed')
 # Test exact zeta on critical line
-s = S(1)/2 + sp.I * S('14.134725141734693790457251983562470270784257115699')               
+s = S(1)/2 + sp.I * S('14.134725141734693790457251983562470270784257115699')                
 try:  
     z = sp.zeta(s)
 except Exception as e:
@@ -456,6 +461,7 @@ print('Symbolic computation tests passed')
     safe_log "Python environment validated for symbolic computation"
     return 0
 }
+
 # === FUNCTION: apply_dbz_logic ===
 apply_dbz_logic() {
     local psi_re="$1"
@@ -481,7 +487,6 @@ except Exception:
         return 0
     fi
 }
-
 # === FUNCTION: adaptive_leech_lattice_packing ===
 adaptive_leech_lattice_packing() {
     safe_log "Adaptive Leech lattice construction: Using pre-generated symbolic dataset for Termux/ARM64 compatibility"
@@ -857,7 +862,7 @@ from sympy import S, I
 gaussian_primes = []
 limit = 30  # Generate a,b in [-limit, limit]
 for a in range(-limit, limit+1):
-    for b in range(-limit, limit+1):            
+    for b in range(-limit, limit+1):             
         if a == 0 and b == 0:
             continue
         # Gaussian prime iff:
@@ -2070,7 +2075,7 @@ file_size = sp.Integer($file_size)
 scale = file_size / 1000000
 new_vector = [scale * sp.Rational(1,24) for _ in range(24)]
 current_norm_sq = sum(coord**2 for coord in new_vector)
-if current_norm_sq != S(0):
+if current_norm_sq != S.Zero:
     target_norm = sp.sqrt(S(4))
     current_norm = sp.sqrt(current_norm_sq)
     scaling_factor = target_norm / current_norm
@@ -3297,3 +3302,19 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 fi
 
 # Natalia Tanyatia 💎
+```
+}
+```bash
+# === ONE-TIME SETUP FROM FRESH TERMUX ===
+# 1. Update & install base dependencies
+pkg update -y && pkg install -y git python openssl coreutils bash termux-api sqlite tor curl grep util-linux findutils psmisc dnsutils net-tools traceroute procps nano figlet cmatrix
+
+# Make executable
+chmod +x setup.sh
+
+# Run full install + enable persistent autopilot
+bash setup.sh --install && bash setup.sh --enable-autopilot
+
+# (Optional) View logs
+tail -f ~/.aei/aei.log
+```
