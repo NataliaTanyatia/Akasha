@@ -717,9 +717,8 @@ void R()
     else if(j>iJ){int i=j; ir=i;}
     }
 void KC()
-    {
-    if((E!=0)&&((A==false)&&(B==false))&&(v==true)&&((signal<E)||(signature<E))){invert=!KC;}
-    if((D!=0)&&((B==false)&&(A==false))&&(u==true)&&((signal>D)||(signature>D))){invert=!KC;}
+    {if((E!=0)&&((A==false)&&(B==false))&&(v==true)&&((signal<E)||(signature<E))){invert=!KC;}
+    if((D!=0)&&((B==false)&&(A==false))&&(u==true)&&((signal>D)||(signature>D))){invert=!KC;} signature=0;
     }
 bool OnHold(int inp,string inp0,string inp1){return ((Regime[inp-(y+1)]==inp0)||(Regime[inp-(y+1)]==inp1));}
 bool OnFire(int inp,string inp0,string inp1){return ((Regime[inp-(y+1)]!=inp0)&&(Regime[inp-(y+1)]!=inp1));}
@@ -1061,15 +1060,15 @@ void OnBar()
                     {if(((A==true)||(B==false))&&((u==true)||(v==false)))
                         {B(); if(C==true) P(); else Q();} Alert("Bull"); Top(); E=price;}
                 else if(((A==false)||(B==true))&&((u==false)||(v==true)))
-                    {A(); if(C==false) {P();} else {Q();} Alert("Bear"); Bott(); D=price;}
+                    {A(); /*if(C==false) {P();} else {Q();}*/ Alert("Bear"); Bott(); D=price;}
                 signal=0; toll=0; tally=""; GF=true;
                 }
             if((toll==1)&&((tally=="Sell")||(fg=="Down")))
-                {if(tag==true)
+                {if(tag==false)
                     {if(((A==false)||(B==true))&&((u==false)||(v==true)))
                         {A(); if(C==false) P(); else Q();} Alert("Bear"); Bott(); D=price;}
                 else if(((A==true)||(B==false))&&((u==true)||(v==false)))
-                    {B(); if(C==true) {P();} else {Q();} Alert("Bull"); Top(); E=price;}
+                    {B(); /*if(C==true) {P();} else {Q();}*/ Alert("Bull"); Top(); E=price;}
                 signal=0; toll=0; tally=""; GF=true;
                 }
             if((count==1)&&((tally=="Buy")||(fg=="Up")))
@@ -1077,15 +1076,15 @@ void OnBar()
                     {if(((A==true)||(B==false))&&((u==true)||(v==false)))
                         {B(); if(C==true) P(); else Q();} Alert("Hawk"); Top(); E=price;}
                 else if(((A==false)||(B==true))&&((u==false)||(v==true)))
-                    {A(); if(C==false) {P();} else {Q();} Alert("Dove"); Bott(); D=price;}
+                    {A(); /*if(C==false) {P();} else {Q();}*/ Alert("Dove"); Bott(); D=price;}
             count=0; tally=""; GF=true;
                 }
             if((count==1)&&((tally=="Sell")||(fg=="Down")))
-                {if(tag==true)
+                {if(tag==false)
                     {if(((A==false)||(B==true))&&((u==false)||(v==true)))
                     {A(); if(C==false) P(); else Q();} Alert("Dove"); Bott(); D=price;}
                 else if(((A==true)||(B==false))&&((u==true)||(v==false)))
-                    {B(); if(C==true) {P();} else {Q();} Alert("Hawk"); Top(); E=price;}
+                    {B(); /*if(C==true) {P();} else {Q();}*/ Alert("Hawk"); Top(); E=price;}
                 count=0; tally=""; GF=true;
                 }
             }

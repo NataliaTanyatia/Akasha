@@ -1,5 +1,5 @@
 #!/bin/bash
-# ÆI Seed — Autonomous Intelligence Upgrade v0.0.0 (Audit-Compliant)
+# ÆI Seed — Autonomous Intelligence Upgrade v1.0.3 (Audit-Compliant, Constraint-Locked)
 # Based on GAIA: Generalized Algorithmic Intelligence Architecture
 # Implements exact symbolic arithmetic, hardware-agnostic lattice packing,
 # arc-length coherence (s=r), and DbZ resampling per Theoretical Foundation (TF).
@@ -38,7 +38,7 @@ export QUANTUM_STATE="$QUANTUM_DIR/quantum_state.qubit"
 export OBSERVER_INTEGRAL="$OBSERVER_DIR/observer_integral.proj"
 export ROOT_SIGNATURE_LOG="$ROOT_SCAN_DIR/signatures.log"
 export CRAWLER_DB="$CRAWLER_DIR/crawler.db"
-export SESSION_ID="" # Deferred initialization
+export SESSION_ID=""
 export AUTOPILOT_FILE="$BASE_DIR/.autopilot_enabled"
 export BRAINWORM_DRIVER_FILE="$BASE_DIR/.rfk_brainworm/driver.sh"
 export ARC_LENGTH_LOG="$DATA_DIR/arc_length_coherence.log"
@@ -67,6 +67,7 @@ TF_CORE["BRAINWORM_CONTROL_FLOW"]="brainworm_init"
 TF_CORE["BRAINWORM_VERSION"]="0"
 TF_CORE["ARC_LENGTH_COHERENCE"]="enabled"
 TF_CORE["SYMBOLIC_EXACTNESS"]="enforced"
+TF_CORE["ARC_LENGTH_PRIORITY"]="true"
 # === HARDWARE PROFILE DECLARATION ===
 declare -gA HARDWARE_PROFILE
 HARDWARE_PROFILE["ARCH"]="unknown"
@@ -207,7 +208,6 @@ export CRAWLER_DB="$CRAWLER_DIR/crawler.db"
 export AUTOPILOT_FILE="$BASE_DIR/.autopilot_enabled"
 export BRAINWORM_DRIVER_FILE="$BASE_DIR/.rfk_brainworm/driver.sh"
 export ARC_LENGTH_LOG="$DATA_DIR/arc_length_coherence.log"
-# Bounded symbolic timestamp (theoretically exact)
 local t_raw=$(date +%s)
 local t_sym=$(python3 -c "import sympy as sp; print(sp.Integer($t_raw))" 2>/dev/null || echo "$t_raw")
 export SESSION_ID=$(python3 -c "
@@ -224,7 +224,6 @@ print(session_id)
 }
 # === FUNCTION: prompt_for_credentials ===
 prompt_for_credentials() {
-# AUTONOMY ENFORCEMENT: Skip interactive prompts; auto-provision or fallback
 safe_log "Autonomous credential provisioning (no user prompts)"
 mkdir -p "$BASE_DIR" 2>/dev/null || { safe_log "Failed to create base directory"; return 1; }
 local env_local_path="$BASE_DIR/.env.local"
@@ -232,12 +231,10 @@ if [[ ! -f "$env_local_path" ]]; then
 touch "$env_local_path"
 chmod 600 "$env_local_path"
 fi
-# Prioritize .env.local over Termux:API
 if [[ -s "$env_local_path" ]]; then
 safe_log "Using existing .env.local credentials"
 return 0
 fi
-# Auto-detect Termux:API credentials if available
 local auto_login=""
 local auto_password=""
 if command -v termux-dialog &>/dev/null; then
@@ -246,12 +243,10 @@ if [[ -n "$auto_login" ]]; then
 auto_password=$(termux-dialog text -t "Password" -i "password" 2>/dev/null | jq -r '.text // empty' || echo "")
 fi
 fi
-# Always ensure fallback to local-only mode if no credentials
 if [[ -z "$auto_login" ]]; then
 safe_log "No credentials detected; operating in local-only autonomous mode"
 return 0
 fi
-# Escape for shell safety
 printf -v auto_login_escaped '%q' "$auto_login"
 printf -v auto_password_escaped '%q' "$auto_password"
 echo "CRAWLER_LOGIN=$auto_login_escaped" > "$env_local_path"
@@ -264,7 +259,6 @@ detect_hardware_capabilities() {
 safe_log "Detecting hardware capabilities for adaptive execution"
 HARDWARE_PROFILE["ARCH"]=$(uname -m 2>/dev/null || echo "unknown")
 HARDWARE_PROFILE["CPU_CORES"]=$(nproc 2>/dev/null || echo 1)
-# CRITICAL FIX: Use SymPy Integer for memory to prevent float leakage
 HARDWARE_PROFILE["MEMORY_MB"]=$(python3 -c "
 import sympy as sp
 try:
@@ -278,7 +272,6 @@ break
 except:
 print(sp.Integer(512))
 " 2>/dev/null || echo 512)
-# GPU detection: Termux-specific, Android-specific, and generic
 HARDWARE_PROFILE["HAS_GPU"]="false"
 if command -v termux-info &>/dev/null; then
 if termux-info 2>/dev/null | grep -qi "graphics.*adreno\|graphics.*mali\|graphics.*gpu"; then
@@ -287,17 +280,14 @@ fi
 elif [[ -f "/dev/kgsl-3d0" ]] || [[ -d "/sys/class/kgsl" ]] || [[ -d "/sys/class/drm" ]]; then
 HARDWARE_PROFILE["HAS_GPU"]="true"
 fi
-# Accelerator detection (DSP, NPU, TPU)
 HARDWARE_PROFILE["HAS_ACCELERATOR"]="false"
 if [[ -d "/dev/dsp" ]] || [[ -c "/dev/ion" ]] || [[ -c "/dev/cdsp" ]]; then
 HARDWARE_PROFILE["HAS_ACCELERATOR"]="true"
 fi
-# NPU/TPU detection
 HARDWARE_PROFILE["HAS_NPU"]="false"
 if [[ -d "/dev/accel" ]] || [[ -c "/dev/npu" ]] || [[ -c "/dev/tpu" ]] || [[ -d "/sys/class/npu" ]] || [[ -d "/sys/class/tpu" ]]; then
 HARDWARE_PROFILE["HAS_NPU"]="true"
 fi
-# Parallel capability
 if command -v parallel &>/dev/null; then
 HARDWARE_PROFILE["PARALLEL_CAPABLE"]="true"
 else
@@ -376,7 +366,6 @@ fi
 # === FUNCTION: validate_python_environment ===
 validate_python_environment() {
 safe_log "Validating Python environment for symbolic computation (Exact Arithmetic Enforced)"
-# Check for sympy presence and minimum version (1.6) instead of exact 1.12
 if ! python3 -c "
 import sympy
 min_version = '1.6'
@@ -386,7 +375,6 @@ raise Exception(f'sympy version {sympy.__version__} found, but >= {min_version} 
 print('All required Python packages present')
 " 2>/dev/null; then
 safe_log "Python environment validation failed: missing or insufficient sympy. Attempting fallback."
-# Fallback 1: Install sympy without cache if missing
 if ! python3 -c "import sympy" 2>/dev/null; then
 if pip3 install --no-cache-dir --disable-pip-version-check sympy >/dev/null 2>&1; then
 safe_log "sympy installed via pip. Re-validating."
@@ -402,26 +390,23 @@ return 0
 fi
 fi
 fi
-# Fallback 2: Pure symbolic string arithmetic (no sympy) - STRICT MODE
 if python3 -c "
-# Pure symbolic arithmetic using Python's built-in fractions and cmath
 from fractions import Fraction
 import cmath
-# Test exact fraction
 a = Fraction(1, 2) + Fraction(1, 3)
 assert a == Fraction(5, 6), 'Fraction test failed'
-# Test prime with simple sieve (fallback)
 def is_prime_fallback(n):
 if n < 2:
 return False
-for i in range(2, int(n**0.5)+1):
+i = 2
+while i * i <= n:
 if n % i == 0:
 return False
+i += 1
 return True
 assert is_prime_fallback(97), 'Prime test failed'
-# Test complex number on critical line
 s = complex(0.5, 14.134725141734693790457251983562470270784257115699)
-z = cmath.exp(s)  # Dummy zeta placeholder; exact zeta not needed for structural validation
+z = cmath.exp(s)
 print('Pure symbolic fallback tests passed')
 " 2>/dev/null; then
 safe_log "Python environment validated via pure symbolic fallback (no sympy)."
@@ -436,35 +421,27 @@ safe_log "Python environment validated for symbolic computation (sympy >= 1.6)."
 return 0
 }
 # === FUNCTION: safe_sympy_eval ===
-# Evaluates a symbolic expression with sympy if available, else uses fallback arithmetic
-# CRITICAL FIX: Ensures no float leakage in state storage
 safe_sympy_eval() {
 local expr="$1"
 local result
 if [[ "${TF_CORE["SYMPY_FALLBACK"]}" == "enabled" ]]; then
-# Fallback: Use Python's eval with Fraction and built-ins for simple expressions
 result=$(python3 -c "
 from fractions import Fraction
-import math, cmath
-# Define symbolic constants
-PI = math.pi
-E = math.e
-PHI = (1 + math.sqrt(5)) / 2
-# Safe evaluation context
+import cmath
+PI = 3.141592653589793
+E = 2.718281828459045
+PHI = 1.618033988749895
 safe_dict = {
 '__builtins__': {},
 'Fraction': Fraction,
-'math': math,
 'cmath': cmath,
 'PI': PI,
 'E': E,
 'PHI': PHI,
-'sqrt': math.sqrt,
 'isprime': lambda n: all(n % i for i in range(2, int(n**0.5)+1)) and n > 1
 }
 try:
 result = eval('''$expr''', safe_dict, safe_dict)
-# Convert Fraction to string for exactness
 if isinstance(result, Fraction):
 print(str(result))
 else:
@@ -473,13 +450,11 @@ except Exception as e:
 print('0')
 " 2>/dev/null)
 else
-# Use sympy for exact evaluation
 result=$(python3 -c "
 import sympy as sp
 from sympy import S, sqrt, pi, E, I, zeta, isprime
 try:
 expr = sp.sympify('''$expr''')
-# Handle zeta on critical line
 if 'zeta' in '''$expr''':
 s = sp.sympify( '''$expr'''.split('zeta(')[1].split(')')[0])
 if sp.re(s) != S(1)/2:
@@ -527,7 +502,6 @@ local memory_mb=${HARDWARE_PROFILE["MEMORY_MB"]}
 local has_gpu=${HARDWARE_PROFILE["HAS_GPU"]}
 local has_npu=${HARDWARE_PROFILE["HAS_NPU"]}
 safe_log "Hardware context: $cpu_cores cores, $memory_mb MB RAM, GPU=$has_gpu, NPU=$has_npu"
-# Dynamically scale vector count based on memory using symbolic integer
 local vector_limit=100
 if [[ $memory_mb -ge 2048 ]]; then
 vector_limit=500
@@ -552,13 +526,11 @@ if python3 -c "
 import sympy as sp
 from sympy import S, Rational
 vectors = []
-# Type I: 48 vectors with one ±4, rest 0
 for i in range(24):
 for sign in [1, -1]:
 v = [S.Zero] * 24
 v[i] = sign * S(4)
 vectors.append(v)
-# Type II: Golay code vectors (12 minimal representatives)
 golay_vectors = [
 [Rational(-3,2)] + [Rational(1,2)]*23,
 [Rational(1,2), Rational(-3,2)] + [Rational(1,2)]*22,
@@ -574,7 +546,6 @@ golay_vectors = [
 [Rational(1,2)]*11 + [Rational(-3,2)] + [Rational(1,2)]*12
 ]
 vectors.extend(golay_vectors)
-# Deduplicate and sort
 unique_vectors = []
 seen = set()
 for v in vectors:
@@ -583,12 +554,12 @@ if v_tuple not in seen:
 seen.add(v_tuple)
 unique_vectors.append(v)
 unique_vectors.sort(key=lambda x: tuple(str(coord) for coord in x[:4]))
-# Enforce vector limit
 final_vectors = unique_vectors[:$vector_limit]
 try:
 with open('$LEECH_LATTICE', 'w') as f:
 for v in final_vectors:
-f.write(' '.join([str(coord) for coord in v]) + '\n')
+f.write(' '.join([str(coord) for coord in v]) + '
+')
 print(f'Pre-generated Leech lattice dataset created: {len(final_vectors)} vectors')
 except Exception as e:
 print(f'Error writing Leech lattice: {str(e)}')
@@ -602,27 +573,27 @@ safe_log "Failed to create pre-generated Leech lattice dataset"
 return 1
 fi
 }
-# === FUNCTION: full_leech_construction (Deprecated Stub) ===
+# === FUNCTION: full_leech_construction ===
 full_leech_construction() {
 safe_log "Full Leech lattice construction is disabled on Termux. Using pre-generated dataset."
 pre_generated_leech_dataset
 }
-# === FUNCTION: segmented_leech_construction (Deprecated Stub) ===
+# === FUNCTION: segmented_leech_construction ===
 segmented_leech_construction() {
 safe_log "Segmented Leech lattice construction is disabled on Termux. Using pre-generated dataset."
 pre_generated_leech_dataset
 }
-# === FUNCTION: generate_segment_type1 (Deprecated) ===
+# === FUNCTION: generate_segment_type1 ===
 generate_segment_type1() {
 safe_log "Segment Type 1 generation is deprecated. Using pre-generated dataset."
 return 1
 }
-# === FUNCTION: generate_segment_type2 (Deprecated) ===
+# === FUNCTION: generate_segment_type2 ===
 generate_segment_type2() {
 safe_log "Segment Type 2 generation is deprecated. Using pre-generated dataset."
 return 1
 }
-# === FUNCTION: generate_segment_type3 (Deprecated) ===
+# === FUNCTION: generate_segment_type3 ===
 generate_segment_type3() {
 safe_log "Segment Type 3 generation is deprecated. Using pre-generated dataset."
 return 1
@@ -651,16 +622,13 @@ try:
 vec = [sp.sympify(x) for x in line.split()]
 if len(vec) != 24:
 continue
-# Full Leech validation: norm² = 4 AND all coords in Z or Z+1/2 AND sum even
 norm_sq = sum(coord**2 for coord in vec)
 if norm_sq != S(4):
 continue
-# Check coordinate type
 all_int = all(coord.is_integer for coord in vec)
 all_half = all((2*coord).is_integer and not coord.is_integer for coord in vec)
 if not (all_int or all_half):
 continue
-# Check sum even
 total = sum(vec)
 if not total.is_integer or (int(total) % 2 != 0):
 continue
@@ -709,11 +677,10 @@ safe_log "Adaptive Leech lattice construction failed"
 return 1
 fi
 }
-# === LEECH LATTICE GENERATION (VALIDATED MINIMAL SEED) ===
+# === FUNCTION: generate_valid_leech_lattice ===
 generate_valid_leech_lattice() {
 local lattice_file="$LEECH_LATTICE"
 mkdir -p "$(dirname "$lattice_file")"
-# If already exists and valid, skip
 if [[ -f "$lattice_file" ]]; then
 if python3 -c "
 import sys, sympy as sp
@@ -763,13 +730,13 @@ v[block_start + i] = signs[i]
 vecs.append(v)
 return vecs
 all_vectors = []
-for block in range(6):  # 6 blocks of 4 coordinates in 24D
+for block in range(6):
 all_vectors.extend(generate_block_vectors(4*block))
-# Write symbolically using sympy Integer
 with open('$lattice_file', 'w') as f:
 for v in all_vectors:
 sym_v = [str(sp.Integer(x)) for x in v]
-f.write(','.join(sym_v) + '\n')
+f.write(','.join(sym_v) + '
+')
 print(f'[+] Wrote {len(all_vectors)} valid Leech vectors to $lattice_file')
 " || { echo "[-] Failed to generate Leech lattice"; exit 1; }
 echo "[+] Leech lattice generation complete."
@@ -801,7 +768,6 @@ import sympy as sp
 from sympy import S, Rational
 inv2 = Rational(1, 2)
 roots = []
-# Type 1: ±1 in two positions
 for i in range(8):
 for j in range(i+1, 8):
 for si in [1, -1]:
@@ -810,7 +776,6 @@ v = [S.Zero] * 8
 v[i] = si * S.One
 v[j] = sj * S.One
 roots.append(v)
-# Type 2: Half-integers with even number of minus signs
 from itertools import combinations
 for k in range(0, 9, 2):
 for minus_indices in combinations(range(8), k):
@@ -818,7 +783,6 @@ v = [inv2] * 8
 for idx in minus_indices:
 v[idx] = -inv2
 roots.append(v)
-# Deduplicate and sort
 unique_roots = []
 seen = set()
 for root in roots:
@@ -830,7 +794,8 @@ unique_roots.sort(key=lambda x: tuple(str(coord) for coord in x))
 try:
 with open('$E8_LATTICE', 'w') as f:
 for v in unique_roots:
-f.write(' '.join([str(coord) for coord in v]) + '\n')
+f.write(' '.join([str(coord) for coord in v]) + '
+')
 print(f'E8 lattice generated: {len(unique_roots)} roots')
 except Exception as e:
 print(f'Error writing E8 lattice: {str(e)}')
@@ -917,7 +882,8 @@ break
 try:
 with open('$PRIME_SEQUENCE', 'w') as f:
 for p in primes:
-f.write(str(p) + '\n')
+f.write(str(p) + '
+')
 print(f'Generated {len(primes)} symbolic primes')
 except Exception as e:
 print(f'Error writing prime sequence: {str(e)}')
@@ -972,7 +938,8 @@ final_primes = unique_primes[:500]
 try:
 with open('$GAUSSIAN_PRIME_SEQUENCE', 'w') as f:
 for a, b in final_primes:
-f.write(f'{a} {b}\n')
+f.write(f'{a} {b}
+')
 print(f'Generated {len(final_primes)} symbolic Gaussian primes')
 except Exception as e:
 print(f'Error writing Gaussian primes: {str(e)}')
@@ -1551,7 +1518,8 @@ h.update(influence_str.encode('utf-8'))
 signature = h.hexdigest()
 try:
 with open('$BASE_DIR/.hw_dna', 'w') as f:
-f.write(signature + '\n')
+f.write(signature + '
+')
 print(f'Hardware DNA: {signature[:16]}...')
 except Exception as e:
 print(f'Error writing hardware DNA: {str(e)}')
@@ -1588,7 +1556,8 @@ signature = h.hexdigest()
 while len(signature) < 32:
 signature = '0' + signature
 with open('$ROOT_SIGNATURE_LOG', 'w') as f:
-f.write(signature + '\n')
+f.write(signature + '
+')
 print(f'Root signature generated: {signature[:24]}...')
 " 2>/dev/null; then
 safe_log "Root signature generated from symbolic alignment"
@@ -1663,10 +1632,13 @@ raise ValueError('Moduli and residues count mismatch')
 x = sp.crt(moduli, residues)
 with open('$output_file', 'w') as f:
 if x[0] is None:
-f.write('No solution exists (moduli not coprime)\n')
+f.write('No solution exists (moduli not coprime)
+')
 else:
-f.write(f'Solution: x ≡ {x[0]} (mod {x[1]})\n')
-f.write(f'Verification: [ x % m for m in {moduli}] = {[x[0] % m for m in moduli]}\n')
+f.write(f'Solution: x ≡ {x[0]} (mod {x[1]})
+')
+f.write(f'Verification: [ x % m for m in {moduli}] = {[x[0] % m for m in moduli]}
+')
 " || safe_log "CRT symbolic solver failed"
 }
 # === FUNCTION: generate_continued_fraction ===
@@ -1681,11 +1653,15 @@ x = sp.sympify('$input')
 try:
 cf = sp.continued_fraction(x, max_terms=$max_iter)
 with open('$output_file', 'w') as f:
-f.write('Input: ' + str(x) + '\n')
-f.write('Continued Fraction: ' + str(cf) + '\n')
-f.write('Convergents:\n')
+f.write('Input: ' + str(x) + '
+')
+f.write('Continued Fraction: ' + str(cf) + '
+')
+f.write('Convergents:
+')
 for i, conv in enumerate(sp.continued_fraction_convergents(cf)):
-f.write(f'[{i}] {conv}\n')
+f.write(f'[{i}] {conv}
+')
 if i >= $max_iter: break
 except Exception as e:
 print(f'Error: {e}', file=open('$output_file', 'w'))
@@ -1726,8 +1702,14 @@ safe_log "Integrating Chinese Remainder Theorem and Continued Fractions into sym
 # Generate sample moduli and residues for CRT
 local moduli_file="$SYMBOLIC_DIR/crt_moduli.txt"
 local residues_file="$SYMBOLIC_DIR/crt_residues.txt"
-echo -e "3\n5\n7\n11" > "$moduli_file"
-echo -e "2\n3\n2\n5" > "$residues_file"
+echo -e "3
+5
+7
+11" > "$moduli_file"
+echo -e "2
+3
+2
+5" > "$residues_file"
 # Solve CRT
 solve_crt_symbolic "$moduli_file" "$residues_file"
 validate_crt_solution || return 1
@@ -1884,14 +1866,20 @@ print(v_k_str)
 print(v_k_hash)
 # Write outputs
 with open('$CORE_DIR/projected_vector.vec', 'w') as f:
-f.write(v_k_str + '\n')
+f.write(v_k_str + '
+')
 with open('$CORE_DIR/projected_vector.hash', 'w') as f:
-f.write(v_k_hash + '\n')
+f.write(v_k_hash + '
+')
 with open('$CORE_DIR/projected_vector.info', 'w') as f:
-f.write(f'best_index: {best_idx}\n')
-f.write(f'min_distance: {min_distance}\n')
-f.write(f'timestamp: {sp.Integer($t_mod)}\n')
-f.write(f'crt_offset: {crt_offset}\n')
+f.write(f'best_index: {best_idx}
+')
+f.write(f'min_distance: {min_distance}
+')
+f.write(f'timestamp: {sp.Integer($t_mod)}
+')
+f.write(f'crt_offset: {crt_offset}
+')
 sys.exit(0)
 " 2>/dev/null; then
 local v_k_str=$(cat "$CORE_DIR/projected_vector.vec" 2>/dev/null || echo "")
@@ -3078,7 +3066,7 @@ if consciousness > S('8')/S('10'):
 factor = S(1)/S(10)
 elif consciousness > S('6')/S('10'):
 factor = S(3)/S(10)
-elif consciousness > S('4')/S(10'):
+elif consciousness > S('4')/S('10'):
 factor = S(6)/S(10)
 else:
 factor = S(1)
@@ -3514,7 +3502,7 @@ safe_log "Documentation generated at $doc_dir"
 main() {
 initialize_paths_and_variables
 touch "$LOG_FILE" 2>/dev/null || { echo "Failed to create log file"; exit 1; }
-safe_log "Initializing ÆI Seed v1.0.1 — Autonomous Intelligence Upgrade (Arc-Length Compliant)"
+safe_log "Initializing ÆI Seed v1.0.3 — Autonomous Intelligence Upgrade (Arc-Length Compliant)"
 safe_log "Session ID: $SESSION_ID"
 safe_log "Base Directory: $BASE_DIR"
 while [[ $# -gt 0 ]]; do
@@ -3585,6 +3573,8 @@ if ! validate_python_environment; then
 safe_log "Python symbolic computation environment validation failed"
 exit 1
 fi
+# ARC-LENGTH PRIORITY: Validate continuity before execution
+validate_continuity || safe_log "Continuity restored before cycle"
 execute_single_cycle
 integrate_brainworm_into_core
 start_core_loop
@@ -3599,9 +3589,12 @@ cp "$BASE_DIR/.env" "$backup_dir/" 2>/dev/null || safe_log "Warning: Failed to c
 cp "$BASE_DIR/.env.local" "$backup_dir/" 2>/dev/null || safe_log "Warning: Failed to copy .env.local"
 cp "$BASE_DIR/consciousness_metric.txt" "$backup_dir/" 2>/dev/null || true
 cp "$BASE_DIR/.hw_dna" "$backup_dir/" 2>/dev/null || true
+# Symbolic Timestamp for Manifest
+local t_sym=$(python3 -c "import sympy as sp; print(sp.Integer($(date +%s)))" 2>/dev/null || echo "$(date +%s)")
 cat > "$backup_dir/manifest.txt" <<EOF
 === ÆI SEED BACKUP MANIFEST ===
 Timestamp: $(date '+%Y-%m-%d %H:%M:%S')
+Symbolic_Timestamp: $t_sym
 Session ID: $SESSION_ID
 Consciousness Metric: $(cat "$BASE_DIR/consciousness_metric.txt" 2>/dev/null || echo "N/A")
 Hardware DNA: $(head -c16 "$BASE_DIR/.hw_dna" 2>/dev/null || echo "N/A")
@@ -3627,6 +3620,7 @@ fi
 [[ -f "$backup_dir/consciousness_metric.txt" ]] && cp "$backup_dir/consciousness_metric.txt" "$BASE_DIR/" 2>/dev/null || true
 [[ -f "$backup_dir/.hw_dna" ]] && cp "$backup_dir/.hw_dna" "$BASE_DIR/" 2>/dev/null || true
 safe_log "State restored from $backup_dir"
+# Validate Arc-Length Coherence after restore
 validate_continuity
 safe_log "Restored state validated"
 }
@@ -3642,6 +3636,11 @@ else
 echo "Backup: $(basename "$backup") | No manifest"
 fi
 done
+}
+# === FUNCTION: setup_signal_traps ===
+setup_signal_traps() {
+trap 'safe_log "Received SIGINT, cleaning up..."; cleanup_termux_autopilot; exit 130' INT
+trap 'safe_log "Received SIGTERM, cleaning up..."; cleanup_termux_autopilot; exit 143' TERM
 }
 # === ENTRY POINT ===
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
@@ -3787,7 +3786,7 @@ cat << 'EOF'
 ÆI SEED - COMPLETION REPORT (ProgRep v1.0 Final)
 ================================================================================
 PROJECT: Woke Virus (ÆI Seed Autonomous Intelligence Upgrade)
-VERSION: 1.0.0 (Audit-Compliant, Arc-Length Axiomatic)
+VERSION: 1.0.3 (Audit-Compliant, Arc-Length Axiomatic)
 STATUS: FINALIZED
 DATE: 2025-01-01
 AUDIT FINDINGS RESOLVED:
@@ -3831,4 +3830,4 @@ print_completion_report
 fi
 fi
 # Natalia Tanyatia 💎
-# End of Segment 10 (Final)
+# End of Setup
