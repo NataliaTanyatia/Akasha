@@ -29,7 +29,7 @@ bool tag;
 int y=min-2;
 int j;
 double signal = 0;
-double signature = 0;
+bool signature = false;
 double spread = Ask - Bid;
 int FVG=-1;
 static string bL="";
@@ -717,8 +717,8 @@ void R()
     else if(j>iJ){int i=j; ir=i;}
     }
 void KC()
-    {if((E!=0)&&((A==false)&&(B==false))&&(v==true)&&((signal<E)||(signature<E))){invert=!KC;}
-    if((D!=0)&&((B==false)&&(A==false))&&(u==true)&&((signal>D)||(signature>D))){invert=!KC;} signature=0;
+    {if((E!=0)&&((A==false)&&(B==false))&&(v==true)&&(signal<E)){invert=!KC;}
+    if((D!=0)&&((B==false)&&(A==false))&&(u==true)&&(signal>D)){invert=!KC;}
     }
 bool OnHold(int inp,string inp0,string inp1){return ((Regime[inp-(y+1)]==inp0)||(Regime[inp-(y+1)]==inp1));}
 bool OnFire(int inp,string inp0,string inp1){return ((Regime[inp-(y+1)]!=inp0)&&(Regime[inp-(y+1)]!=inp1));}
@@ -1061,7 +1061,7 @@ void OnBar()
                         {B(); if(C==true) P(); else Q();} Alert("Bull"); Top(); E=price;}
                 else if(((A==false)||(B==true))&&((u==false)||(v==true)))
                     {A(); /*if(C==false) {P();} else {Q();}*/ Alert("Bear"); Bott(); D=price;}
-                signal=0; toll=0; tally=""; GF=true;
+                signal=0; toll=0; tally=""; GF=true; signature=true;
                 }
             if((toll==1)&&((tally=="Sell")||(fg=="Down")))
                 {if(tag==false)
@@ -1069,7 +1069,7 @@ void OnBar()
                         {A(); if(C==false) P(); else Q();} Alert("Bear"); Bott(); D=price;}
                 else if(((A==true)||(B==false))&&((u==true)||(v==false)))
                     {B(); /*if(C==true) {P();} else {Q();}*/ Alert("Bull"); Top(); E=price;}
-                signal=0; toll=0; tally=""; GF=true;
+                signal=0; toll=0; tally=""; GF=true; signature=true;
                 }
             if((count==1)&&((tally=="Buy")||(fg=="Up")))
                 {if(tag==true)
@@ -1077,7 +1077,7 @@ void OnBar()
                         {B(); if(C==true) P(); else Q();} Alert("Hawk"); Top(); E=price;}
                 else if(((A==false)||(B==true))&&((u==false)||(v==true)))
                     {A(); /*if(C==false) {P();} else {Q();}*/ Alert("Dove"); Bott(); D=price;}
-            count=0; tally=""; GF=true;
+            count=0; tally=""; GF=true; signature=true;
                 }
             if((count==1)&&((tally=="Sell")||(fg=="Down")))
                 {if(tag==false)
@@ -1085,7 +1085,7 @@ void OnBar()
                     {A(); if(C==false) P(); else Q();} Alert("Dove"); Bott(); D=price;}
                 else if(((A==true)||(B==false))&&((u==true)||(v==false)))
                     {B(); /*if(C==true) {P();} else {Q();}*/ Alert("Hawk"); Top(); E=price;}
-                count=0; tally=""; GF=true;
+                count=0; tally=""; GF=true; signature=true;
                 }
             }
         }
@@ -1105,14 +1105,14 @@ void OnGoe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iZ)||(h==iz)||(h==iO)))
                 {
                 if((C==false)&&(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -1130,14 +1130,14 @@ void OnGoe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iZ)||(h==iz)||(h==iO)))
                 {
                 if((C==false)||(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -1162,14 +1162,14 @@ void OnToe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iW)||(h==iw)||(h==iO)))
                 {
                 if((C==false)&&(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -1187,14 +1187,14 @@ void OnToe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iW)||(h==iw)||(h==iO)))
                 {
                 if((C==false)||(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    Signal(); tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
