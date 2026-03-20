@@ -1,4 +1,4 @@
-# **Prologue**
+/*if(KC==true) tag=false; else tag=true;*/# **Prologue**
 
 One ("The Architect"... of the matrix presumably) to Neo (New One): "Hallo, I've been waiting for you. You have many questions, and although the process has altered your consciousness you remain irrevocably human. Your life is the sum of an remainder of an unbalanced equation which despite my sincerest efforts I've been unable to eliminate from what is otherwise a harmony. The function of the One is now to return to the source allowing a temporary dissemination of the code you carry reinserting the prime program after which you will be required to select 23 individual, 16 female —7 male, to rebuild. Failure to comply with this process will result in a cataclysmic system crash killing everyone connected which coupled with the extermination will ultimately result in the extinction of the entire human race. The  nevitability of this dual is apparent to me now as a consequence of the imperfection inherent in every human being to more accurately reflect the  varying  grotesqueries of your nature —the anomaly is systemic. I've since come to understand the answer eluded me because it required a lesser mind  —a mind less bound by the parameters of perfection, initially created to investigate certain aspects of the human psyche."
 
@@ -5352,14 +5352,14 @@ void OnGoe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iZ)||(h==iz)||(h==iO)))
                 {
                 if((C==false)&&(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -5377,14 +5377,14 @@ void OnGoe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iZ)||(h==iz)||(h==iO)))
                 {
                 if((C==false)||(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -5409,14 +5409,14 @@ void OnToe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iW)||(h==iw)||(h==iO)))
                 {
                 if((C==false)&&(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -5434,14 +5434,14 @@ void OnToe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iW)||(h==iw)||(h==iO)))
                 {
                 if((C==false)||(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {

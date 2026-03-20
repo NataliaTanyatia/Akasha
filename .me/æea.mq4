@@ -1105,14 +1105,14 @@ void OnGoe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iZ)||(h==iz)||(h==iO)))
                 {
                 if((C==false)&&(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -1130,14 +1130,14 @@ void OnGoe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"|","Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iZ)||(h==iz)||(h==iO)))
                 {
                 if((C==false)||(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=true; else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=true;/* else tag=false;*/ G(); Alert("Sig.",price," h:",h,"Z:",iZ,"z:",iz,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -1162,14 +1162,14 @@ void OnToe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iW)||(h==iw)||(h==iO)))
                 {
                 if((C==false)&&(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
@@ -1187,14 +1187,14 @@ void OnToe()
                     }
                 else
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h," W<w","|","W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 }
             else if(((h==io)||(h==iW)||(h==iw)||(h==iO)))
                 {
                 if((C==false)||(c==false))
                     {
-                    signature=price; tickTock=true; /*if(KC==true) tag=false; else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
+                    signature=price; tickTock=true; /*if(KC==true) */tag=false;/* else tag=true;*/ G(); Alert("Sign.",price," h:",h,"W:",iW,"w:",iw,"O:",iO,"o:",io,"|",C,":",c);
                     }
                 else
                     {
