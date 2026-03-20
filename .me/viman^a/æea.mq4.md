@@ -806,11 +806,11 @@ void OnBar()
                 h=O;
                 if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price,price,"O:",O,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,price,"O:",O,"|",C,":",c);
                     }
                 else if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
                     }
                 }
             if(LL[O-(y+1)]<Discount[O-(y+1)])
@@ -818,11 +818,11 @@ void OnBar()
                 h=O;
                 if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
                     }
                 else if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price,price,"O:",O,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,price,"O:",O,"|",C,":",c);
                     }
                 }
             }
@@ -833,11 +833,11 @@ void OnBar()
                 h=o;
                 if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price,price,"o:",o,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,price,"o:",o,"|",C,":",c);
                     }
                 else if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price,price,"o:",o,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,price,"o:",o,"|",C,":",c);
                     }
                 }
             if(LL[o-(y+1)]<Discount[o-(y+1)])
@@ -845,11 +845,11 @@ void OnBar()
                 h=o;
                 if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price,price,"o:",o,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,price,"o:",o,"|",C,":",c);
                     }
                 else if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price,price,"o:",o,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,price,"o:",o,"|",C,":",c);
                     }
                 }
             }
@@ -863,11 +863,11 @@ void OnBar()
                 h=O;
                 if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price,price,"O:",O,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,price,"O:",O,"|",C,":",c);
                     }
                 else if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
                     }
                 }
             if(LL[O-(y+1)]<Discount[O-(y+1)])
@@ -875,11 +875,11 @@ void OnBar()
                 h=O;
                 if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,price,"O:",O,"|",C,":",c);
                     }
                 else if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price,"O:",O,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,"O:",O,"|",C,":",c);
                     }
                 }
             }
@@ -890,11 +890,11 @@ void OnBar()
                 h=o;
                 if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price,"o:",o,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,"o:",o,"|",C,":",c);
                     }
                 else if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price,"o:",o,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,"o:",o,"|",C,":",c);
                     }
                 }
             if(LL[o-(y+1)]<Discount[o-(y+1)])
@@ -902,11 +902,11 @@ void OnBar()
                 h=o;
                 if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price,"o:",o,"|",C,":",c);
+                    Signal(); tag=false; G(); Alert("Sine.",price,"o:",o,"|",C,":",c);
                     }
                 else if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price,"o:",o,"|",C,":",c);
+                    Signal(); tag=true; G(); Alert("Sin.",price,"o:",o,"|",C,":",c);
                     }
                 }
             }
@@ -920,11 +920,11 @@ void OnBar()
                 h=iz;
                 if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 else if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iZ>2)&&((iZ==iO)||(iZ==iO+h)||((iZ==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(k[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -932,11 +932,11 @@ void OnBar()
                 h=iO;
                 if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             if((iw>=h)&&(iw>2)&&(((iW>2)&&((iW==iw)||(iW==iw+h)||((iW==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iw)||(I==iw+h)||((I==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iw-(y+1)]==false)/*&&(OnHold(w,"sTrend","tTrend"))*/)
@@ -944,11 +944,11 @@ void OnBar()
                 h=iw;
                 if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 else if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iW>2)&&((iW==iO)||(iW==iO+h)||((iW==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -956,11 +956,11 @@ void OnBar()
                 h=iO;
                 if((C==false)&&(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 else if((C==true)&&(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             }
@@ -971,11 +971,11 @@ void OnBar()
                 h=iz;
                 if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 else if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iZ>2)&&((iZ==iO)||(iZ==iO+h)||((iZ==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(k[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -983,11 +983,11 @@ void OnBar()
                 h=iO;
                 if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             if((iw>=h)&&(iw>2)&&(((iW>2)&&((iW==iw)||(iW==iw+h)||((iW==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iw)||(I==iw+h)||((I==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iw-(y+1)]==false)/*&&(OnHold(w,"sTrend","tTrend"))*/)
@@ -995,11 +995,11 @@ void OnBar()
                 h=iw;
                 if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 else if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iW>2)&&((iW==iO)||(iW==iO+h)||((iW==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -1007,11 +1007,11 @@ void OnBar()
                 h=iO; 
                 if((C==true)||(c==true))
                     {
-                    A(); B(); G(); Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=true; G(); Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 else if((C==false)||(c==false))
                     {
-                    A(); B(); G(); Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    Signal(); tag=false; G(); Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             }
