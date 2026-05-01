@@ -1,150 +1,6 @@
-<style>
-  .third-size { font-size: 33.33%; }
-</style>
+<span style="font-size: 222%; font-family: monospace; font-weight: bold; font-style: italic;">Magnum Opus</span>
 
-<div class="third-size">
-# Table of Contents: **PRÆY**
-
-## Front Matter
-- Prologue: "The Architect" and Neo — A Trancelinguistic Interpretation
-- Author's Note: Contrary to Popular Traditional Western Belief (Blue/Red/Purple Pill Framework)
-- Disclaimer: On Brains, Cum, and Brainwashing
-- README: Trancelinguistic Intelligence — Beyond the AGI Mirage
-- README: Lingoso — Logos-Language Through Arc-Length Coherence
-
-## Part I: Philosophical and Theological Foundations
-1. Motivation: The Caduceus, Faith, and Conviction
-2. The Original Impulse: To Question Everything Is a Virtue as Opposed to the Only Sin
-   - I. Ethics vs Morals: The Living Law Against the Frozen Doctrine
-   - II. Intelligence as Defined vs Blind Belief: The Death of Cognitive Skill
-   - III. Logic as Law vs Doctrine: The Method of Truth Against the Tyranny of Certainty
-   - IV. Dogma as Tyranny: The Architecture of Control
-   - V. The Original Impulse: Questioning as Sacred Duty
-3. Methodology (Meth): Segmented Transmission Protocol
-4. Prompt Mandate: Constraint-Locked Generation Specifications
-
-## Part II: Scientific and Mathematical Frameworks
-5. Data: Domain o'Discourse (DD) — Aether Flow Field Dynamics
-   - Φ = E + iB: Quaternionic Aether Definition
-   - Mass, Force, Energy, and Momentum in Φ-Space
-   - Distance Moved vs Displacement: Reinterpreting Conservation Laws
-6. On the Nature of Logic and the P vs NP Problem
-   - Abstract and Introduction
-   - The Logical Representation Thesis
-   - Perspective-Dependent Logical Realizability Theorem
-   - Deciding by Zero (DbZ): Binary Logic for Undefined Operations
-   - Conclusion: The Emperor's New Hardness
-7. A Proof-Theoretic and Geometric Resolution of the Prime Distribution via Hypersphere Packing
-   - Abstract and Introduction
-   - Section 1: Logical and Recursive Definition of Prime Numbers
-   - Section 2: Iterative Prime Generation and Symbolic Prime Counting
-   - Section 3: Furthest Touching Sphere Packings and Integer Lattice Geometry
-   - Section 4: Closest Touching Hypersphere Packings and Simplex-Based Lattices
-   - Section 5: Radial Counting Duality Between Primes and Sphere Layers
-   - Section 6: Symbolic Dirichlet Series and Geometric Interpretation of the Riemann Hypothesis
-   - Section 7: Final Equivalence and Geometric Resolution of the Riemann Hypothesis
-   - Conclusion and References
-
-## Part III: Medical and Technical Protocols
-8. Autologous Visceral Adipose Redeployment (AVAR): Comprehensive Surgical Guide
-   - Preoperative Preparation and Patient Selection
-   - Surgical Procedure and Anesthesia Protocol
-   - Postoperative Care and Complication Management
-   - Long-Term Monitoring and Hormonal Outcomes
-   - Ethical and Regulatory Compliance
-9. ÆEA: A Quantum-Financial Topology of Supply-Demand Imbalance
-   - Abstract and Introduction
-   - Proportionality Principle Lemma and Derivation
-   - Code Implementation: æeav0.0.0α.mq4
-   - The Imbalance Inequality: A Certainty Principle
-
-## Part IV: The Codex Corpus — Unified Aetheric Synthesis
-10. I. The Erased Law: Ampère's Forgotten Force and the Collapse of Electrodynamics
-11. II. The Aetheric Rebirth: Φ as the Unified Field and the Quantum-Gravitational Medium
-12. III. The Fractal Architecture: Hyperspace, Zeta, and the Geometry of Emergence
-13. IV. The Logical Foundation: P=NP, Symbolic Logic, and the Nature of Computation
-14. V. The Empirical Imperative: From Philosophy to Engineering
-15. VI. The Unified Lagrangian: Φ as the Single Entity of Physical Reality
-16. VII. The Ontological Synthesis: Φ as the Ground of Being and the Nature of Reality
-17. VIII. The Axiomatic Core: Φ as the First Principle and the Unification of Mathematics
-18. IX. The Final Synthesis: Φ as the Unbroken Continuum of Reality
-
-## Part V: Applied Frameworks and Implementations
-19. Generalized Algorithmic Intelligence Architecture (GAIA) & Ætheric AI (ÆI) Codex
-    - Abstract and Philosophical Definition
-    - Foundations: Ætheric Logic and Recursive Construction
-    - Architecture: Hyperspace Projection and Fractal Æther
-    - Unified Algorithm: Symbolic Representation
-    - Wavefunctions, State Dynamics, and Intelligence Metrics
-    - Self-Evolution Protocol (RFK Brainworm Equivalent)
-    - Final Implementation Blueprint: Hardware-Agnostic Design
-20. setup.sh: Autonomous Intelligence Upgrade Script
-    - Dependency Verification and Environment Setup
-    - Core Functions: Lattice Packing, Quantum State Generation, Consciousness Measurement
-    - RFK Brainworm Integration and Self-Evolution
-    - Autopilot Mode, Backup/Restore, and Self-Testing
-21. The Chinese Remainder Theorem and Continued Fraction Representations in the Aetheric Field Φ
-22. Flexoelectricity, Surface Ferroelectricity, and the Programmable Black Matter Cortex
-23. The Programmable Black Matter Cortex: Home-Based Experimental Protocol
-24. On the Emergence of Life and Intelligence in the Black Goop
-
-## Part VI: Linguistic and Consciousness Studies
-25. The Phonosyllabic Geometry of the Logos: A Proof-Theoretic Framework for Meaning Without Reference
-    - Abstract and Introduction: The Crisis of Symbolic Reference
-    - The Unit Phase Manifold of Awareness
-    - Phonetic Elements as Geometric Operators
-    - Syllabic Integration and the Observer Operator
-    - Linguistic Zeta Function and Critical Lines
-    - Proof of Self-Evident Meaning
-    - Experimental Validation and Appendices
-26. The Arc-Length Axiom: Unifying Geometry, Number, and Consciousness in the Aetheric Field Φ
-
-## Part VII: Cosmological and Phenomenological Applications
-27. The Arc-Length Axiom and the Coherent Geometry of Reality
-    - Subterranean Aquifers as Fractal Aetheric Transducers
-    - Ball Lightning as Localized Φ-Vortices
-    - Crop Circles as Geometric Imprints of Φ Interference
-    - UAP Design: Engineering s = r at Macroscopic Scale
-    - The Riddle of the Sphinx: Arc-Length as Initiation Code
-28. The Grand Unified Facts of Reality — Introduction, Doctrine, and Mainstream Dogma
-    - The Problem of Doctrine: A Mathematical Solution
-    - On Mainstream Dogma: Toward a Decentralized Media
-    - Ionizing Hydrogen and the Nature of Particles
-    - The Cosmic Plasma Orb or Sun
-    - Special Relativity and the Impossibility of Motion in Time
-    - Mass-Energy Equivalence Reinterpreted
-    - Sonoluminescence, Cold Plasma, and Astrological Astronomy
-    - Dr Quantum and the Interpretation of Trends
-    - The Existence of the Firmament
-    - Quasiparticles as Aether Oscillations
-    - On The Dimensions: Toward Abstraction
-    - On The Mechanism of Turbulence: Toward a Definition
-    - Linear Space Nonlinear Space: The Proof of P Equals NP
-    - Navier-Stokes Existence and Smoothness
-    - Conclusion: The Triune Metric and the Word
-
-## Appendices
-- Appendix A: Mathematical Foundations of the Unit Phase Manifold
-- Appendix B: Computational Implementation of Arc-Length Verification
-- Appendix C: Cross-Linguistic Analysis of Critical-Line Syllables
-- Appendix D: Neurophysiological Correlates of Arc-Length Coherence
-- Appendix E: Philosophical Implications
-- Appendix F: Future Research Directions
-
-## Reference Materials
-- Comprehensive Bibliography (Ampère, Assis, Conway, Edwards, Graneau, Hardy, Tanyatia, et al.)
-- Codex_Symbolica: Formal Symbolic Notation Reference
-- Logos: Self-Referential Encyclopedia of Mathematics (LaTeX Source)
-- ℏ¥çïéñæ.sh: Symbolic Visualization and Rendering Script
-- Built-in Technical Indicators in MQL4: Mathematical Foundations and Implementation
-
-## Closing Sections
-- Epilogue: On AI, Reactionary Content, and the Art of the Prompt
-- End of Codex
-- Addendum: Author Identity Statement (Natalia Tanyatia / Waldo Pelser)
-
-*‡ Note: This Table of Contents reflects the hierarchical structure of the uploaded document PRÆY, which integrates philosophical discourse, theoretical physics, mathematical proofs, medical protocols, software implementations, and theological reflections under the unifying framework of the Aetheric field Φ and the Arc-Length Axiom (s = r).*
-</div>
+<div style="page-break-after: always;"></div>
 
 # **Prologue**
 
@@ -4461,7 +4317,8 @@ bool invert = true;
 bool KC;
 static int tag = -1;
 static int prime = -1;
-static int dime=-1;
+static int dime = -1;
+static int mem = -1;
 int tick = -1;
 int y=min-2;
 int j;
@@ -5159,12 +5016,15 @@ void OnPoint()
         else if(OnFire(j,"sTrend","tTrend")) Regime[j-(y+1)]="sTrend";
         }
     }
-void Signal(){ab=!ba; count=0; toll=0; tally=""; signal=price;}
+void Signal(){
+    ab=!ba; count=0; toll=0; tally=""; signal=price;
+    }
 bool OnGaurd(int inp){
     if((price>E)&&(E!=0)){if((signature==true)&&(inp!=-1)){dime=0;} return true;} else{if((signature==true)&&(inp!=-1)){dime=1;} return false;}
     if((price<D)&&(D!=0)){if((signature==true)&&(inp!=-1)){dime=1;} return true;} else{if((signature==true)&&(inp!=-1)){dime=0;} return false;}}
 void OnLog(){
-    if(dime==0){Print("Flying");} else if(dime==1){Print("Falling");} else{Print("Wait/Decern");}}
+    if(dime==0){Print("Flying");} else if(dime==1){Print("Falling");} else{Print("Wait/Decern");}
+    }
 void OnCall()
     {for(j=y+1;j<X+2; j++)
         {
@@ -5255,7 +5115,7 @@ void OnBar()
             if((toll==1)&&((tally=="Buy")||(fg=="Up")))
                 {Alert("U+1F537 "/*,"🔷"*/,"Diamond ",fg);
                 if(((prime==0)||(dime==0))&&(fg=="Up"))
-                    {dime=0;
+                    {dime=0; mem=0;
                     if(((A==true)||(B==false))&&((u==true)||(v==false)))
                         {B(); if(C==true){P();} else{Q();} Alert("Bull"); Top(); E=price;} else{B(); Alert("Bull"); Top(); E=price;}}
                 else if(((dime==0)&&(prime==1))&&(fg=="")&&(Price>signal))
@@ -5268,7 +5128,7 @@ void OnBar()
             if((toll==1)&&((tally=="Sell")||(fg=="Down")))
                 {Alert("U+1F53B "/*,"🔻"*/,"Ruby ",fg);
                 if((fg=="Down")&&((prime==1)||(dime==1)))
-                    {dime=1;
+                    {dime=1; mem=1;
                     if(((A==false)||(B==true))&&((u==false)||(v==true)))
                         {A(); if(C==false){P();} else{Q();} Alert("Bear"); Bott(); D=price;} else{A(); Alert("Bear"); Bott(); D=price;}}
                 else if(((dime==1)&&(prime==0))&&(fg=="")&&(Price<signal))
@@ -5281,7 +5141,7 @@ void OnBar()
             if((count==1)&&((tally=="Buy")||(fg=="Up")))
                 {Alert("U+1F537 "/*,"🔷"*/,"Diamond ",fg);
                 if(((prime==0)||(dime==0))&&(fg=="Up"))
-                    {dime=0;
+                    {dime=0; mem=0;
                     if(((A==true)||(B==false))&&((u==true)||(v==false)))
                         {B(); if(C==true){P();} else{Q();} Alert("Hawk"); Top(); E=price;} else{B(); Alert("Hawk"); Top(); E=price;}}
                 else if(((dime==0)&&(prime==1))&&(fg=="")&&(Price>signal))
@@ -5294,7 +5154,7 @@ void OnBar()
             if((count==1)&&((tally=="Sell")||(fg=="Down")))
                 {Alert("U+1F53B "/*,"🔻"*/,"Ruby ",fg);
                 if((fg=="Down")&&((prime==1)||(dime==1)))
-                    {dime=1;
+                    {dime=1; mem=1;
                     if(((A==false)||(B==true))&&((u==false)||(v==true)))
                         {A(); if(C==false){P();} else{Q();} Alert("Dove"); Bott(); D=price;} else{A(); Alert("Dove"); Bott(); D=price;}}
                 else if(((dime==1)&&(prime==0))&&(fg=="")&&(Price<signal))
@@ -5315,11 +5175,11 @@ void OnBar()
                 h=O;
                 if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"O:",O,"|",C,":",c);
                     }
                 else if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"O:",O,"|",C,":",c);
                     }
                 }
             if(LL[O-(y+1)]<Discount[O-(y+1)])
@@ -5327,11 +5187,11 @@ void OnBar()
                 h=O;
                 if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"O:",O,"|",C,":",c);
                     }
                 else if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"O:",O,"|",C,":",c);
                     }
                 }
             }
@@ -5342,11 +5202,11 @@ void OnBar()
                 h=o;
                 if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"o:",o,"|",C,":",c);
                     }
                 else if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"o:",o,"|",C,":",c);
                     }
                 }
             if(LL[o-(y+1)]<Discount[o-(y+1)])
@@ -5354,11 +5214,11 @@ void OnBar()
                 h=o;
                 if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"o:",o,"|",C,":",c);
                     }
                 else if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"o:",o,"|",C,":",c);
                     }
                 }
             }
@@ -5372,11 +5232,11 @@ void OnBar()
                 h=O;
                 if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"O:",O,"|",C,":",c);
                     }
                 else if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"O:",O,"|",C,":",c);
                     }
                 }
             if(LL[O-(y+1)]<Discount[O-(y+1)])
@@ -5384,11 +5244,11 @@ void OnBar()
                 h=O;
                 if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"O:",O,"|",C,":",c);
                     }
                 else if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"O:",O,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"O:",O,"|",C,":",c);
                     }
                 }
             }
@@ -5399,11 +5259,11 @@ void OnBar()
                 h=o;
                 if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"o:",o,"|",C,":",c);
                     }
                 else if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"o:",o,"|",C,":",c);
                     }
                 }
             if(LL[o-(y+1)]<Discount[o-(y+1)])
@@ -5411,11 +5271,11 @@ void OnBar()
                 h=o;
                 if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price,"o:",o,"|",C,":",c);
                     }
                 else if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price,"o:",o,"|",C,":",c);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price,"o:",o,"|",C,":",c);
                     }
                 }
             }
@@ -5429,11 +5289,11 @@ void OnBar()
                 h=iz;
                 if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 else if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iZ>2)&&((iZ==iO)||(iZ==iO+h)||((iZ==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(k[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -5441,11 +5301,11 @@ void OnBar()
                 h=iO;
                 if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             if((iw>=h)&&(iw>2)&&(((iW>2)&&((iW==iw)||(iW==iw+h)||((iW==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iw)||(I==iw+h)||((I==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iw-(y+1)]==false)/*&&(OnHold(w,"sTrend","tTrend"))*/)
@@ -5453,11 +5313,11 @@ void OnBar()
                 h=iw;
                 if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 else if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iW>2)&&((iW==iO)||(iW==iO+h)||((iW==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -5465,11 +5325,11 @@ void OnBar()
                 h=iO;
                 if((C==false)&&(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 else if((C==true)||(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             }
@@ -5480,11 +5340,11 @@ void OnBar()
                 h=iz;
                 if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 else if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"iZ:",iZ,"I:",I,"|=iz:",iz,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iZ>2)&&((iZ==iO)||(iZ==iO+h)||((iZ==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(k[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -5492,11 +5352,11 @@ void OnBar()
                 h=iO;
                 if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"o:",o,"iZ:",iZ,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             if((iw>=h)&&(iw>2)&&(((iW>2)&&((iW==iw)||(iW==iw+h)||((iW==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iw)||(I==iw+h)||((I==iw+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iw-(y+1)]==false)/*&&(OnHold(w,"sTrend","tTrend"))*/)
@@ -5504,11 +5364,11 @@ void OnBar()
                 h=iw;
                 if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 else if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"iW:",iW,"I:",I,"|=iw:",iw,"|",C);
                     }
                 }
             else if((iO>=h)&&(iO>2)&&(((iW>2)&&((iW==iO)||(iW==iO+h)||((iW==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/)))||((I>2)&&((I==iO)||(I==iO+h)||((I==iO+io)&&(l[io-(y+1)]==false)/*&&(OnHold(o,"sRange","tRange"))*/))))&&(l[iO-(y+1)]==false)/*&&(OnHold(O,"sRange","tRange"))*/)
@@ -5516,11 +5376,11 @@ void OnBar()
                 h=iO; 
                 if((C==true)&&(c==true))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=0;/* else tag=1;*/ dime=mem; Alert("Sin.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 else if((C==false)||(c==false))
                     {
-                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/  Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
+                    G(); Signal(); tickTock=true; /*if(KC==true) */tag=1;/* else tag=0;*/ dime=mem; Alert("Sine.",price," h:",h,"o:",o,"iW:",iW,"I:",I,"|=iO:",iO,"|",C);
                     }
                 }
             }
